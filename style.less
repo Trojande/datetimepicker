@@ -1,0 +1,149 @@
+@main-color: #1abc9c;
+.date-time-picker {
+  display: inline-block;
+  .user-select(none);
+  &__picker {
+    display: none;
+    position: absolute;
+    z-index: 101;
+    background-color: #eee;
+    width: 500px;
+    &_visible {
+      display: block;
+    }
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__buttons {
+    text-align: center;
+    margin: 5px;
+    align-self: flex-end;
+  }
+  &__save-button {
+    background: @main-color;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    &:hover {
+      cursor: pointer;
+      background: #fff;
+      color: @main-color;
+    }
+  }
+}
+
+.calendar {
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  padding-bottom: 5px;
+  background-color: #eee;
+  flex: 3;
+  &__month {
+    padding: 30px 25px;
+    width: 100%;
+    background-color: @main-color;
+    text-align: center;
+  }
+  &__month-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__month-item {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    &_prevbutton, &_nextbutton {
+      padding-top: 10px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &_prevbutton {
+      float: left;
+    }
+    &_nextbutton {
+      float: right;
+    }
+  }
+  &__year {
+    display: block;
+    font-size: 1.2em;
+  }
+  &__weekdays {
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+    background-color:#ddd;
+  }
+  &__weekday {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+  }
+  &__days {
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+    background-color: #eee;
+  }
+  &__day {
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #777;
+    &:hover {
+      cursor: pointer;
+    }
+    &_forbidden {
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+  }
+  &__day-text {
+    &_active {
+      color: #fff;
+      background-color: @main-color;
+      padding: 5px;
+    }
+    &_forbidden {
+      color: #D5D5D5;
+    }
+  }
+
+}
+.time-picker {
+  flex: 2;
+  display: flex;
+  background-color: #eee;
+  font-size: 40px;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  .user-select(none);
+  &__button {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  input&__input {
+    width: 60px;
+    height: 60px;
+    font-size: 1em;
+    padding: 0;
+    text-align: center;
+    background-color: #eee;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      flex: 0.2;
+      -webkit-appearance: none;
+    }
+  }
+}
